@@ -4,8 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#f8e8ea" />
+  <meta name="theme-color" content="#fffbfe" />
   <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon-192.png" type="image/png" />
+  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
   <link rel="stylesheet" href="./styles.css" />
   <title>Steam Out</title>
 </head>
@@ -33,15 +35,15 @@
       <p>Si hay riesgo inminente, no uses la app y busca ayuda profesional o de emergencia ahora.</p>
       <ul>
         <li><a href="tel:911">Emergencias: 911</a></li>
-        <li><a href="tel:5255102800">Línea PAS (Psicosocial): 55 5510 2800</a></li>
-        <li><a href="tel:9661234567">Consejería Telefónica IMSS: 01-800-2222-668</a></li>
+        <li><a href="tel:8004727272">Línea PAS (crisis y prevención del suicidio): 800 472 7272</a></li>
+        <li><a href="tel:8002222668">Consejería Telefónica IMSS: 800 2222 668</a></li>
         <li><strong>Psiquiatra o médico de urgencias más cercano</strong></li>
       </ul>
       <button class="btn" id="closeCrisis">Cerrar pantalla de crisis</button>
     </div>
   </div>
 
-  <button class="btn danger floating-crisis" id="crisisBtn">Botón de crisis</button>
+  <button class="btn danger floating-crisis" id="crisisBtn" aria-label="Botón de crisis" title="Botón de crisis">SOS</button>
 
   <header class="top">
     <div class="brand" style="font-size: 20px; letter-spacing: 1px;">Steam Out</div>

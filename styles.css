@@ -143,7 +143,7 @@ body[data-theme="dark"] {
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html, body { height: 100%; overflow-x: hidden; }
+html, body { min-height: 100%; overflow-x: hidden; }
 
 body {
   margin: 0;
@@ -553,7 +553,7 @@ select:focus {
 
 input[type="range"] {
   width: 100%;
-  accent-color: var(--accent-2);
+  accent-color: var(--accent);
 }
 
 .floating-crisis {
@@ -562,14 +562,26 @@ input[type="range"] {
   bottom: var(--md-spacing-4);
   z-index: 900;
   border-radius: 999px;
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   box-shadow: var(--md-elevation-level3);
-  font-size: 24px;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  /* Color sólido para máximo contraste: es el control más crítico. */
+  background: var(--md-sys-color-error);
+  color: var(--md-sys-color-on-error);
+  border-color: var(--md-sys-color-error);
+}
+
+.floating-crisis:hover {
+  background: var(--md-sys-color-error);
+  box-shadow: var(--md-elevation-level4);
 }
 
 .module-card .danger { color: var(--danger); font-weight: 700; }
