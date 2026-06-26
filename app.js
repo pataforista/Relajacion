@@ -46,10 +46,12 @@ function announceFeedback(message, vibratePattern = null, critical = false) {
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 const getTheme = () => localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 const setTheme = (theme) => {
   body.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
   themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
+  if (themeColorMeta) themeColorMeta.setAttribute("content", theme === "dark" ? "#191c1c" : "#fafdfc");
 };
 setTheme(getTheme());
 themeToggle.onclick = () => setTheme(body.getAttribute("data-theme") === "dark" ? "light" : "dark");
@@ -584,15 +586,15 @@ breathToggle.onclick = () => {
     breathMode.value = "extended";
   }
 
-  startTool("Respiración", () => {
-    breathing = true;
-    bI = 0;
-    breathToggle.textContent = "Detener";
-    logToolSession("breath", "start");
-    announceFeedback(`Inicia ${breathPrograms[breathMode.value].name}. Sigue el ritmo.`, 30);
+  // La respiración se guía en su propia tarjeta (círculo + fase + temporizador),
+  // no en el overlay modal: abrir el overlay taparía la animación.
+  breathing = true;
+  bI = 0;
+  breathToggle.textContent = "Detener";
+  logToolSession("breath", "start");
+  announceFeedback(`Inicia ${breathPrograms[breathMode.value].name}. Sigue el ritmo.`, 30);
 
-    runBreathProgram();
-  });
+  runBreathProgram();
 };
 
 /* ===== Brown noise ===== */
