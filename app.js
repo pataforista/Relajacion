@@ -51,7 +51,7 @@ const setTheme = (theme) => {
   body.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
   themeToggle.textContent = theme === "dark" ? "☀️" : "🌙";
-  if (themeColorMeta) themeColorMeta.setAttribute("content", theme === "dark" ? "#1c1b1f" : "#fffbfe");
+  if (themeColorMeta) themeColorMeta.setAttribute("content", theme === "dark" ? "#191c1c" : "#fafdfc");
 };
 setTheme(getTheme());
 themeToggle.onclick = () => setTheme(body.getAttribute("data-theme") === "dark" ? "light" : "dark");

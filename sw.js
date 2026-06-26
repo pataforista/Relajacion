@@ -1,4 +1,4 @@
-const CACHE = "steam-out-v2";
+const CACHE = "steam-out-v3";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,6 +7,7 @@ const ASSETS = [
   "./manifest.webmanifest",
   "./assets/act.png",
   "./assets/dbt.png",
+  "./assets/fonts/inter-latin.woff2",
   "./icons/icon-192.png",
   "./icons/icon-512.png"
 ];
